@@ -1,22 +1,22 @@
 import time
 import random
 
-def timing_decorator(func):
+def timing_decorator(funcion):
     def wrapped_function(*args, **kwargs):
-        start = time.perf_counter()
-        output = func(*args, **kwargs)
-        duration = time.perf_counter() - start
-        print(f"Execution of {func.__name__} took {duration:.5f} seconds.")
-        return output
+        starT = time.perf_counter()
+        outpuT = func(*args, **kwargs)
+        duratioN = time.perf_counter() - starT
+        print(f"Execution of {funcion.__name__} took {duratioN:.5f} seconds.")
+        return outpuT
     return wrapped_function
 
 @timing_decorator
 def perform_task():
     print("Starting the process!")
-    total = 0
-    limit = random.randint(20, 600)
-    for num in range(limit):
-        total += num ** 2
+    sum = 0
+    li1mir = random.randint(20, 600)
+    for num in range(li1mir):
+        sum += num ** 2
 
 @timing_decorator
 def compute_values(x=3, y=7):
